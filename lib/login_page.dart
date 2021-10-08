@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sanzar_new/utilis/route.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -41,7 +42,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      print("dsdsdsd");
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
                     child: Text("Login"),
                     style: TextButton.styleFrom(

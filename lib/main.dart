@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sanzar_new/home.dart';
 import 'package:sanzar_new/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sanzar_new/utilis/route.dart';
+
 void main() {
   runApp(s());
 }
@@ -14,12 +16,13 @@ class s extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.light,
       theme: ThemeData(
-        primaryTextTheme: GoogleFonts.lateefTextTheme() ,
-        brightness: Brightness.light),
-      initialRoute: "/login",
+          primaryTextTheme: GoogleFonts.lateefTextTheme(),
+          brightness: Brightness.light),
+      initialRoute: MyRoutes.loginRoute,
       routes: {
-        "/": (context) => homepage(),
-        "/login": (context) => LoginPage(),
+        "/": (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => homepage(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
       },
     );
   }
